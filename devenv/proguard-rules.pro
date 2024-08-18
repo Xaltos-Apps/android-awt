@@ -19,3 +19,9 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+-dontwarn org.apache.fop.complexscripts.fonts.GlyphSubstitutionTable
+-dontwarn org.apache.fop.complexscripts.util.CharScript
+-dontwarn org.apache.fop.complexscripts.util.GlyphSequence
+-dontwarn org.apache.fop.fonts.apps.TTFReader
+-dontwarn org.apache.fop.fonts.truetype.FontFileReader
+-dontwarn org.apache.fop.fonts.truetype.TTFFile

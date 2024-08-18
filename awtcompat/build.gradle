@@ -2,10 +2,11 @@ apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
 
 android {
-    compileSdkVersion 30
+    compileSdk 34
+    namespace "org.librepdf.openpdf.android.awtcompat"
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 30
+        minSdkVersion 21
+        targetSdkVersion 34
         versionCode 1
         versionName "1.0.0"
     }
@@ -35,19 +36,11 @@ dependencies {
 project.afterEvaluate {
     publishing {
         publications {
-            repositories.maven {
-                url 'https://andob.io/repository/open_source/'
-                credentials {
-                    username "$System.env.MAVEN_PUBLISH_USERNAME"
-                    password "$System.env.MAVEN_PUBLISH_PASSWORD"
-                }
-            }
-
             release(MavenPublication) {
                 from components.release
-                groupId 'ro.andob.androidawt'
+                groupId 'com.github.ilyapavlovskii'
                 artifactId 'androidawt'
-                version '1.0.4'
+                version '1.0.5'
             }
         }
     }
