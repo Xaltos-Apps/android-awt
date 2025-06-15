@@ -26,13 +26,13 @@ android {
             path "src/main/cpp/CMakeLists.txt"
         }
     }
-
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging true
+        }
+    }
     compileOptions {
-        packagingOptions {
-            jniLibs {
-                useLegacyPackaging true
-            }
-        } coreLibraryDesugaringEnabled true
+        coreLibraryDesugaringEnabled true
         targetCompatibility JavaVersion.VERSION_1_8
         sourceCompatibility JavaVersion.VERSION_1_8
     }
