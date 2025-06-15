@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.4.1)
 
+project(awtcompat-native-components)
+
 set(SOURCES
     awtcompat_native_components.c
     headers/awtcompat_native_components.h
@@ -57,4 +59,11 @@ include_directories(
     common/
     lcms/
     lcmm/
+)
+
+#target_link_options(${CMAKE_PROJECT_NAME} PRIVATE "-Wl,-z,max-page-size=4096")
+#target_link_options(${CMAKE_PROJECT_NAME} PRIVATE "-Wl,-z,common-page-size=4096")
+target_link_options(awtcompat-native-components PRIVATE
+        "-Wl,-z,max-page-size=16384"
+        "-Wl,-z,common-page-size=16384"
 )
